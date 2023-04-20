@@ -43,26 +43,24 @@ const App = () => {
       </span>
       <span className="understanding-and-searching-thro">
         Understanding and searching through hardware docs is hard.<br />
-        Let’s automate that process with Documate.
+        Let’s automate that process with :Documate.
       </span>
+      
       <Form onSubmit={handleSubmit} className="frame">
-        <Form.Label className="your-email-address">Your email address</Form.Label>
-        
+        <Form.Group controlId="formBasicEmail">
+          <Form.Control className="email-form" 
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </Form.Group>
         <div className="frame-1">
           <Button type="submit" className="request-access">
-            Request access
+            Request Access
           </Button>
         </div>
       </Form>
-      <Alert
-        show={showAlert}
-        onClose={() => setShowAlert(false)}
-        dismissible
-        variant="success"
-        className="mt-4"
-      >
-        You have been successfully added to the waitlist!
-      </Alert>
     </div>
     </>
   );
