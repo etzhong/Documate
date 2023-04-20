@@ -1,6 +1,7 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Alert, Button, Form } from "react-bootstrap";
+import Typewriter from 'typewriter-effect';
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -25,14 +26,20 @@ const App = () => {
   };
 
   return (
+    <>
     <div className="landing">
       <div className="frame-2">
         <img className="logo" src={"logo.svg"} />
         <span className="login">LOGIN</span>
       </div>
       <span className="simplify-hardware-documentation">
-        Simplify hardware<br />
-        <s>documentation</s> docs.
+        <Typewriter
+          onInit={(typewriter) =>{
+          typewriter
+            .typeString("Simplify hardware<br /><s style='color: #aaa'>documentation</s> docs.</span>")
+            .start();
+          }}
+        />
       </span>
       <span className="understanding-and-searching-thro">
         Understanding and searching through hardware docs is hard.<br />
@@ -57,6 +64,7 @@ const App = () => {
         You have been successfully added to the waitlist!
       </Alert>
     </div>
+    </>
   );
 };
 
