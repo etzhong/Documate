@@ -1,0 +1,25 @@
+.space {
+    margin-bottom: 60px;
+}
+
+.myDocuments {
+    margin-left:6.5%;
+    font-family: Inter, Arial;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.uploadButton {
+    margin-right: 8%;
+    margin-top: -10px;
+    border-radius: 10px;
+}
+
+.div1 {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    align-items: center;
+    display: flex;
+}
