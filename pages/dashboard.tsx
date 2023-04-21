@@ -14,7 +14,7 @@ const Dashboard = () => {
     <p className={styles.space}/>
     <div className={styles.div1}>
       <h1 className={styles.myDocuments}>My Documents</h1>
-      <Button variant="primary lg" className={styles.uploadButton}>Upload</Button>
+      <Button variant="primary btn-lg" className={styles.uploadButton}>Upload</Button>
     </div>
     <p className={styles.space}/>
     <div className={styles.gridContainer}>
