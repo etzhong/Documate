@@ -12,6 +12,7 @@ export function Header(){
                 <strong>DASHBOARD</strong>
             </a>
         </div>
+        <p className={styles.space}/>
         <hr className={styles.line}/>
         </>
     );
