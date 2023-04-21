@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Alert, Button, Form } from "react-bootstrap";
 import Typewriter from 'typewriter-effect';
 
@@ -19,6 +19,9 @@ const App = () => {
       // Success
       setShowAlert(true);
       setEmail("");
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 5000); // hide the alert after 5 seconds
     } else {
       // Invalid email
       alert("Please enter a valid email address");
@@ -42,8 +45,8 @@ const App = () => {
         />
       </span>
       <span className="understanding-and-searching-thro">
-        Understanding and searching through hardware docs is hard.<br />
-        Let’s automate that process with :Documate.
+        Understanding and searching through hardware docs is hard<br />
+        Let’s automate that process with <b>:Documate</b>.
       </span>
       
       <Form onSubmit={handleSubmit} className="frame">
@@ -52,7 +55,7 @@ const App = () => {
             type="email"
             placeholder="Email"
             value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={handleEmailChange}
           />
         </Form.Group>
         <div className="frame-1">
@@ -61,6 +64,18 @@ const App = () => {
           </Button>
         </div>
       </Form>
+        
+      <Alert
+        className="alert alert-primary"
+        role="alert"
+        show={showAlert}
+        onClose={() => setShowAlert(false)}
+        dismissible
+        variant="success"
+      >
+        You have been added to the waitlist!
+      </Alert>
+      
     </div>
     </>
   );
