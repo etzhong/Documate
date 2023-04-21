@@ -1,6 +1,5 @@
 import '@/styles/base.css';
 import '@/styles/landing.css';
-import '@/styles/dashboard.css';
 import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
 

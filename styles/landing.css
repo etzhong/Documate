@@ -14,31 +14,6 @@
   display: flex;
 }
 
-.frame-2 {
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-  align-self: flex-start;
-  align-items: center;
-  column-gap: 41px;
-  margin-bottom: 227px;
-  padding: 16px 32px;
-  display: flex;
-}
-
-.logo {
-  width: 162px;
-  height: 24px;
-  object-fit: cover;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 360px;
-}
-
-.login {
-  margin-left: 360px;
-}
-
 .simplify-hardware-documentation {
   text-align: center;
   letter-spacing: -3px;

@@ -5,8 +5,8 @@
     align-self: flex-start;
     align-items: center;
     display: flex;
-    margin-top: 10px;
-    margin-bottom: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .logo {
@@ -14,10 +14,15 @@
 }
 
 .dashboardLink {
-    margin-top: 8px;
     font-family: Inter, Arial;
     font-size: 1.5rem;
     margin-right:40px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.dashboardLink:hover {
+    color: #3987cf;
 }
 
 .line {
