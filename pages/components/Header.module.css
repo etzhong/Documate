@@ -1,0 +1,25 @@
+.header {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 18px;
+}
+
+.logo {
+    margin-left: 40px;
+}
+
+.dashboardLink {
+    margin-top: 8px;
+    font-family: Inter, Arial;
+    font-size: 1.5rem;
+    margin-right:40px;
+}
+
+.line {
+    color: #3987cf;
+}

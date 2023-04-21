@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 import { Alert, Button, Form } from "react-bootstrap";
 import Typewriter from 'typewriter-effect';
+import {Header} from "./components/Header";
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -30,11 +31,9 @@ const App = () => {
 
   return (
     <>
+    <Header/>
+    <p style={{'margin-bottom': '240px'}}></p>
     <div className="landing">
-      <div className="frame-2">
-        <img className="logo" src={"logo.svg"} />
-        <span className="login">DASHBOARD</span>
-      </div>
       <span className="simplify-hardware-documentation">
         <Typewriter
           onInit={(typewriter) =>{
