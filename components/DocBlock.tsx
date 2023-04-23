@@ -1,7 +1,7 @@
 import * as React from "react";
 import {Container} from "react-bootstrap";
 import styles from "./DocBlock.module.css";
-import Image from "next/Image";
+import Image from "next/image";
 
 interface Props {
     name: string;
