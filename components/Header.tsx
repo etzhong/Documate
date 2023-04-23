@@ -6,7 +6,7 @@ export function Header(){
         <>
         <div className={styles.header}>
             <a href="/">
-                <img className={styles.logo} src={"logo.svg"}/>
+                <img className={styles.logo} src={"../logo.svg"}/>
             </a>
             <a className={styles.dashboardLink} href="/dashboard">
                 <strong>DASHBOARD</strong>
