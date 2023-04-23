@@ -5,19 +5,14 @@ import {useRouter} from "next/router"
 import styles from "./Header.module.css";
 
 export function Header(){
-
-    const router = useRouter();
-    function forceRefresh(){
-        router.reload();
-    }
     
     return (
         <>
         <div className={styles.header}>
-            <Link href="/" onClick={forceRefresh}>
+            <Link href="/" >
                 <Image src="../logo.svg" alt=":Documate Logo" width="250" height="0" className={styles.logo}/>
             </Link>
-            <Link className={styles.dashboardLink} href="/dashboard" onClick={forceRefresh}>
+            <Link className={styles.dashboardLink} href="/dashboard">
                 <strong>DASHBOARD</strong>
             </Link>
         </div>
