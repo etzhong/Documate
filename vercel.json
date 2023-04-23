@@ -1,6 +1,10 @@
 {
-    "build": {
-      "runtime": "vercel/lambda-glibc"
-    }
-  }
-  
+    "version": 2,
+    "runtime": "vercel/lambda-glibc",
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      }
+    ]
+}
