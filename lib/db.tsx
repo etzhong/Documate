@@ -17,7 +17,7 @@ export class Chunk {
 
 export async function connectToDatabase() {
   const DB_CONN_STRING = 'mongodb+srv://svott:Mongo1234@cluster0.v1wrvyg.mongodb.net/?retryWrites=true&w=majority';
-  const COLLECTION_NAME = 'Rigol.pdf';
+  const COLLECTION_NAME = 'Atmega328P.pdf';
   const DB_NAME = 'LavaLabDB';
   // const DB_CONN_STRING = process.env.DB_CONN_STRING;
   // const COLLECTION_NAME = process.env.COLLECTION_NAME;

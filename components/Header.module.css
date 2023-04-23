@@ -16,7 +16,8 @@
 .dashboardLink {
     font-family: Inter, Arial;
     font-size: 1.5rem;
-    margin-right:40px;
+    margin-right: 40px;
+    margin-bottom: -5px;
     color: #000000;
     text-decoration: none;
 }
@@ -27,5 +28,5 @@
 
 .line {
     color: #3987cf;
-    border-width: 3px;
+    border-width: 2px;
 }

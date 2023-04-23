@@ -2,6 +2,7 @@ import '@/styles/base.css';
 import '@/styles/landing.css';
 import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
+import {Alert, Button, Form} from "react-bootstrap";
 
 const inter = Inter({
   variable: '--font-inter',

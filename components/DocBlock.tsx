@@ -1,6 +1,7 @@
 import * as React from "react";
 import {Container} from "react-bootstrap";
 import styles from "./DocBlock.module.css";
+import Image from "next/Image";
 
 interface Props {
     name: string;
@@ -12,7 +13,8 @@ export function DocBlock(props: Props){
         <>
         <a href={"/documents/" + props.pageID}>
         <Container className={styles.docBlock}>
-            <img src="atmega.png" className={styles.thumbnail}/>
+            <Image src="/atmega.png" alt="atmega thumbnail image" height='200' width='130' 
+                className={styles.thumbnail}/>
             <div className={styles.description}>{props.name}</div>
         </Container>
         </a>

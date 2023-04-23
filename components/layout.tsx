@@ -1,3 +1,5 @@
+import Link from "next/Link"
+
 interface LayoutProps {
   children?: React.ReactNode;
 }
@@ -11,9 +13,9 @@ export default function Layout({ children }: LayoutProps) {
             <a href="#" className="hover:text-slate-600 cursor-pointer">
               Home
             </a>
-            <a href="/homepage" className="hover:text-slate-600 cursor-pointer">
+            <Link href="/homepage" className="hover:text-slate-600 cursor-pointer">
               Outline
-            </a>
+            </Link>
           </nav>
         </div>
       </header>

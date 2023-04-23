@@ -14,7 +14,7 @@ import * as path from 'path';
 // TODO add page numbers to sources
 
 /* Name of directory to retrieve files from. You can change this as required */
-const filePath = '../docs/Oscilloscope.pdf';
+const filePath = '../docs/Atmega328P.pdf';
 
 export const run = async () => {
   try {
@@ -27,22 +27,23 @@ export const run = async () => {
     const rawDocs = await myLoader.loadAndSplit();
     console.log(rawDocs[0]);
     return;
-    // console.log(rawDocs);
+    /* BLOCK COMMENT FOR ESLINT
+    console.log(rawDocs);
     // return;
     // console.log(rawDocs);
 
-    /* Split text into chunks */
+    // Split text into chunks
     const textSplitter = new RecursiveCharacterTextSplitter({
       chunkSize: 1000,
       chunkOverlap: 200,
     });
-
+    
     // const docs = await textSplitter.splitDocuments(rawDocs);
     // const docs = rawDocs;
     console.log('split docs', docs);
 
     console.log('creating vector store...');
-    /*create and store the embeddings in the vectorStore*/
+    //create and store the embeddings in the vectorStore
     const embeddings = new OpenAIEmbeddings();
     const index = pinecone.Index(PINECONE_INDEX_NAME); //change to your own index name
 
@@ -51,7 +52,7 @@ export const run = async () => {
     // on sources return, output the image of the page
     let myMap = new Map<string, number>();
 
-    /* Pinecone recommends a limit of 100 vectors per upsert request to avoid errors*/
+    // Pinecone recommends a limit of 100 vectors per upsert request to avoid errors
     const chunkSize = 50;
     for (let i = 0; i < docs.length; i += chunkSize) {
       const chunk = docs.slice(i, i + chunkSize);
@@ -65,6 +66,7 @@ export const run = async () => {
         PINECONE_NAME_SPACE,
       );
     }
+    */ //END BLOCK COMMENT FOR ESLINT
   } catch (error) {
     console.log('error', error);
     throw new Error('Failed to ingest your data');

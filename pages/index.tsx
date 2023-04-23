@@ -32,7 +32,7 @@ const App = () => {
   return (
     <>
     <Header/>
-    <p style={{'margin-bottom': '240px'}}></p>
+    <p style={{marginBottom: '250px'}}></p>
     <div className="landing">
       <span className="simplify-hardware-documentation">
         <Typewriter
