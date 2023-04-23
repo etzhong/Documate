@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useState } from "react";
-import { Alert, Button, Form, Container } from "react-bootstrap";
+import { Alert, Button, Form, Container, Modal} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from "./dashboard.module.css";
-import {Header} from "./components/Header";
-import {DocBlock} from "./components/DocBlock";
+import {Header} from "@/components/Header";
+import {DocBlock} from "@/components/DocBlock";
 
 const Dashboard = () => {
   

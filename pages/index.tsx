@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 import { Alert, Button, Form } from "react-bootstrap";
 import Typewriter from 'typewriter-effect';
-import {Header} from "./components/Header";
+import {Header} from "@/components/Header";
 
 const App = () => {
   const [email, setEmail] = useState("");
