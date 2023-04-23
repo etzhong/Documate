@@ -28,6 +28,9 @@ dependencies:
   firebase:
     specifier: ^9.19.1
     version: 9.19.1
+  glib:
+    specifier: ^1.3.0
+    version: 1.3.0
   langchain:
     specifier: 0.0.33
     version: 0.0.33(@pinecone-database/pinecone@0.0.10)(mongodb@5.3.0)
@@ -2947,6 +2950,10 @@ packages:
   /get-tsconfig@4.4.0:
     resolution: {integrity: sha512-0Gdjo/9+FzsYhXCEFueo2aY1z1tpXrxWZzP7k8ul9qt1U5o8rYJwTJYmaeHdrVosYIVYkOy2iwCJ9FdpocJhPQ==}
     dev: true
+
+  /glib@1.3.0:
+    resolution: {integrity: sha512-RupJ1Z7oJuVB0dNB1B6w8icWLA+Dn8GETnzhDGZf5u7dvnWMsXE1WrjToxpFIlKXneNmDMdsRF9BWhRdGZ2KQQ==}
+    dev: false
 
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
