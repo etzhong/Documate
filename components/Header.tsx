@@ -9,7 +9,7 @@ export function Header(){
         <>
         <div className={styles.header}>
             <Link href="/" >
-                <Image src="../logo.svg" alt=":Documate Logo" width="250" height="0" className={styles.logo}/>
+                <img src="../logo.svg" alt=":Documate Logo" className={styles.logo}/>
             </Link>
             <Link className={styles.dashboardLink} href="/dashboard">
                 <strong>DASHBOARD</strong>

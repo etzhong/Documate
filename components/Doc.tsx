@@ -67,8 +67,8 @@ export function Doc (props: DocProps) {
         );
         listContent.push(
             <>
-            <h1 id={"link-"+i}>{headers[i]}</h1>
-            <p>{bodies[i]}</p>
+            <h1 id={"link-"+i} className={styles.header}>{headers[i]}</h1>
+            <p id={"link-"+i} className={styles.body}>{bodies[i]}</p>
             </>
         );
     }

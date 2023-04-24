@@ -6,19 +6,20 @@
     align-items: center;
     display: flex;
     background-color: #F3F4F6;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
+    padding-top: clamp(5px, 1.5%, 20px);
+    padding-bottom: clamp(5px, 1.5%, 20px);
 }
 
 .logo {
-    margin-left: 40px;
+    margin-left: 40%;
+    scale: 1.6
 }
 
 .dashboardLink {
     font-family: Inter, Arial;
-    font-size: 1.5rem;
-    margin-right: 40px;
-    margin-bottom: -5px;
+    font-size: 150%;
+    margin-right: clamp(10px, 2.5%, 30px);
+    margin-bottom: -0.45%;
     color: #000000;
     text-decoration: none;
 }
