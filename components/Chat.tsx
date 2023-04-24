@@ -158,163 +158,174 @@ export function Chat() {
   }, [chatMessages]);
 
   //Modal Declarations
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const handleModal = () => {
+      setShowModal(!showModal);
+  };
 
   return (
     <>
-            <div className={styles.ChatMaster}>
-            <h1 className="text-2xl font-bold lexend tracking-tighter text-center text-4xl font -my-2">
-                :Documate Chat
-            </h1>
-            <div className="mx-auto flex flex-col gap-4">
-            <main className={styles.main}>
-              <div className={styles.cloud}>
-                <div ref={messageListRef} className={styles.messagelist}>
-                  {chatMessages.map((message, index) => {
-                    let icon;
-                    let className;
-                    if (message.type === 'apiMessage') {
-                      icon = (
-                        <Image
-                          src="/logo-short.svg"
-                          alt="AI"
-                          width="40"
-                          height="40"
-                          className={styles.boticon}
-                          priority
-                        />
-                      );
-                      className = styles.apimessage;
-                    } else {
-                      icon = (
-                        <Image
-                          src="/usericon.png"
-                          alt="Me"
-                          width="40"
-                          height="40"
-                          className={styles.usericon}
-                          priority
-                        />
-                      );
-                      // The latest message sent by the user will be animated while waiting for a response
-                      className =
-                        loading && index === chatMessages.length - 1
-                          ? styles.usermessagewaiting
-                          : styles.usermessage;
-                    }
-                    return (
-                      <>
-                        <div key={`chatMessage-${index}`} className={className}>
-                          {icon}
-                          <div className={styles.markdownanswer}>
-                            <ReactMarkdown linkTarget="_blank">
-                              {message.message}
-                            </ReactMarkdown>
-                          </div>
-                        </div>
-                        {message.sourceDocs && (
-                          <div className="p-5">
-                            <Accordion
-                              type="single"
-                              collapsible
-                              className="flex-col"
-                            >
-                              {message.sourceDocs.map((doc, index) => (
-                                <div key={`messageSourceDocs-${index}`}>
-                                  <AccordionItem value={`item-${index}`}>
-                                    <AccordionTrigger>
-                                      <h3>Source {index + 1}</h3>
-                                    </AccordionTrigger>
-                                    <AccordionContent>
-                                      <ReactMarkdown linkTarget="_blank">
-                                        {doc.pageContent + "Page Number: " + doc.metadata['page_number']}
-                                      </ReactMarkdown>
-                                      <p className="mt-2">
-                                        <b>Source:</b> {doc.metadata.source}
-                                      </p>
-                                    </AccordionContent>
-                                  </AccordionItem>
-                                </div>
-                              ))}
-                            </Accordion>
-                          </div>
-                        )}
-                      </>
-                    );
-                  })}
-                  {sourceDocs.length > 0 && (
-                    <div className="p-5">
-                      <Accordion type="single" collapsible className="flex-col">
-                        {sourceDocs.map((doc, index) => (
-                          <div key={`sourceDocs-${index}`}>
-                            <AccordionItem value={`item-${index}`}>
-                              <AccordionTrigger>
-                                <h3>Source {index + 1}</h3>
-                              </AccordionTrigger>
-                              <AccordionContent>
+        <Button variant="primary btn-lg" className={styles.uploadButton} onClick={handleModal}> Chat </Button>
+        <Modal class="modal-dialog modal-" size="xl" show={showModal} onHide={handleModal} className={styles.ModalBox}>
+            <Modal.Header className={styles.ModalHeader}>
+              <h1 className="text-2xl font-bold lexend tracking-tighter text-center text-4xl font -my-2">
+                  :Documate Chat
+              </h1>
+            </Modal.Header>
+            <Modal.Body>
+              <div className={styles.ChatMaster}>
+                <div className="mx-auto flex flex-col gap-4">
+                <main className={styles.main}>
+                  <div className={styles.cloud}>
+                    <div ref={messageListRef} className={styles.messagelist}>
+                      {chatMessages.map((message, index) => {
+                        let icon;
+                        let className;
+                        if (message.type === 'apiMessage') {
+                          icon = (
+                            <Image
+                              src="/logo-short.svg"
+                              alt="AI"
+                              width="40"
+                              height="40"
+                              className={styles.boticon}
+                              priority
+                            />
+                          );
+                          className = styles.apimessage;
+                        } else {
+                          icon = (
+                            <Image
+                              src="/usericon.png"
+                              alt="Me"
+                              width="40"
+                              height="40"
+                              className={styles.usericon}
+                              priority
+                            />
+                          );
+                          // The latest message sent by the user will be animated while waiting for a response
+                          className =
+                            loading && index === chatMessages.length - 1
+                              ? styles.usermessagewaiting
+                              : styles.usermessage;
+                        }
+                        return (
+                          <>
+                            <div key={`chatMessage-${index}`} className={className}>
+                              {icon}
+                              <div className={styles.markdownanswer}>
                                 <ReactMarkdown linkTarget="_blank">
-                                  {doc.pageContent}
+                                  {message.message}
                                 </ReactMarkdown>
-                              </AccordionContent>
-                            </AccordionItem>
-                          </div>
-                        ))}
-                      </Accordion>
+                              </div>
+                            </div>
+                            {message.sourceDocs && (
+                              <div className="p-5">
+                                <Accordion
+                                  type="single"
+                                  collapsible
+                                  className="flex-col"
+                                >
+                                  {message.sourceDocs.map((doc, index) => (
+                                    <div key={`messageSourceDocs-${index}`}>
+                                      <AccordionItem value={`item-${index}`}>
+                                        <AccordionTrigger>
+                                          <h3>Source {index + 1}</h3>
+                                        </AccordionTrigger>
+                                        <AccordionContent>
+                                          <ReactMarkdown linkTarget="_blank">
+                                            {doc.pageContent + "Page Number: " + doc.metadata['page_number']}
+                                          </ReactMarkdown>
+                                          <p className="mt-2">
+                                            <b>Source:</b> {doc.metadata.source}
+                                          </p>
+                                        </AccordionContent>
+                                      </AccordionItem>
+                                    </div>
+                                  ))}
+                                </Accordion>
+                              </div>
+                            )}
+                          </>
+                        );
+                      })}
+                      {sourceDocs.length > 0 && (
+                        <div className="p-5">
+                          <Accordion type="single" collapsible className="flex-col">
+                            {sourceDocs.map((doc, index) => (
+                              <div key={`sourceDocs-${index}`}>
+                                <AccordionItem value={`item-${index}`}>
+                                  <AccordionTrigger>
+                                    <h3>Source {index + 1}</h3>
+                                  </AccordionTrigger>
+                                  <AccordionContent>
+                                    <ReactMarkdown linkTarget="_blank">
+                                      {doc.pageContent}
+                                    </ReactMarkdown>
+                                  </AccordionContent>
+                                </AccordionItem>
+                              </div>
+                            ))}
+                          </Accordion>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <div className={styles.center}>
+                    <div className={styles.cloudform}>
+                      <form onSubmit={handleSubmit}>
+                        <textarea
+                          disabled={loading}
+                          onKeyDown={handleEnter}
+                          ref={textAreaRef}
+                          autoFocus={false}
+                          rows={1}
+                          maxLength={512}
+                          id="userInput"
+                          name="userInput"
+                          placeholder={
+                            loading
+                              ? 'Waiting for response...'
+                              : 'Please provide a question'
+                          }
+                          value={query}
+                          onChange={(e) => setQuery(e.target.value)}
+                          className={styles.textarea}
+                        />
+                        <button
+                          type="submit"
+                          disabled={loading}
+                          className={styles.generatebutton}
+                        >
+                          {loading ? (
+                            <div className={styles.loadingwheel}>
+                              <LoadingDots color="#000" />
+                            </div>
+                          ) : (
+                            // Send icon SVG in input field
+                            <svg
+                              viewBox="0 0 20 20"
+                              className={styles.svgicon}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+                            </svg>
+                          )}
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  {error && (
+                    <div className="border border-red-400 rounded-md p-4">
+                      <p className="text-red-500">{error}</p>
                     </div>
                   )}
+                </main>
                 </div>
               </div>
-              <div className={styles.center}>
-                <div className={styles.cloudform}>
-                  <form onSubmit={handleSubmit}>
-                    <textarea
-                      disabled={loading}
-                      onKeyDown={handleEnter}
-                      ref={textAreaRef}
-                      autoFocus={false}
-                      rows={1}
-                      maxLength={512}
-                      id="userInput"
-                      name="userInput"
-                      placeholder={
-                        loading
-                          ? 'Waiting for response...'
-                          : 'Please provide a question'
-                      }
-                      value={query}
-                      onChange={(e) => setQuery(e.target.value)}
-                      className={styles.textarea}
-                    />
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className={styles.generatebutton}
-                    >
-                      {loading ? (
-                        <div className={styles.loadingwheel}>
-                          <LoadingDots color="#000" />
-                        </div>
-                      ) : (
-                        // Send icon SVG in input field
-                        <svg
-                          viewBox="0 0 20 20"
-                          className={styles.svgicon}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
-                        </svg>
-                      )}
-                    </button>
-                  </form>
-                </div>
-              </div>
-              {error && (
-                <div className="border border-red-400 rounded-md p-4">
-                  <p className="text-red-500">{error}</p>
-                </div>
-              )}
-            </main>
-          </div>
-          </div>  
+            </Modal.Body>
+        </Modal>
     </>
   );
 }

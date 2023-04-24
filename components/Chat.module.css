@@ -4,6 +4,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    margin: auto;
+    max-width: 1000px;
   }
   
   .header {
@@ -29,6 +31,7 @@
     background: #ffffff;
     color: #000;
     outline: none;
+    max-width: 1000px;
   }
   
   .textarea:disabled {
@@ -197,6 +200,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 1000px
   }
   
   .pointsnormal {
@@ -261,8 +265,19 @@
     }
   }
 
-  
+.ModalBox {
+    margin-left: auto;
+    margin-right: 0;
+    right: 0;
+}
+
 .ChatMaster {
-    padding-left: -200%;
-    border: 3px solid #3987cf;
+
+}   
+
+.ModalHeader {
+    font-family: Inter, Arial;
+    justify-content: center;
+    margin-bottom: -1%
+
 }
