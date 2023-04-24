@@ -8,9 +8,10 @@ export default function rigolDG2000() {
     return ( 
         <>
         <Header/>
-        <h1>You have reached the Rigol Page!</h1>
-        <Doc/>
-        <Chat/>
+        <Doc title="Rigol DG2000"/>
+        
+
+
         </>
 
     );

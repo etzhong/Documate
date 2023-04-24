@@ -1,0 +1,57 @@
+.sidebar {
+    background: #F3F4F6;
+    margin-right: 2%;
+    width: 20%;
+    min-height: 800px;
+    min-width: 100px;
+    max-width: 500px;
+    height: 100%;
+    float: left;
+    overflow: scroll;
+    position: absolute;
+    scroll-behavior: smooth;
+    font-family: Inter, Arial;
+    padding-top: 2%;
+    padding-bottom: 15%;
+}
+
+.content {
+    width: 70%;
+    height: 100%;
+    float: left;
+    font-size: 16px;
+    padding-right: 2%;
+    padding-left: 2%;
+    overflow: scroll;
+    position: absolute;
+    margin-left: 24%;
+    scroll-behavior: smooth;
+    font-family: Inter, Arial;
+    padding-top: 2%;
+    padding-bottom: 15%;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    position: fixed;
+    scroll-behavior: smooth
+}
+
+.docTitle {
+    font-family: Inter, Arial;
+    font-size: 48px;
+    font-weight: 600;
+    text-align: center;
+    margin: auto;
+}
+
+.chat{
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    scale: 1.2;
+}

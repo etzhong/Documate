@@ -165,7 +165,7 @@ export function Chat() {
 
   return (
     <>
-        <img src={"../chatIcon.svg"} className={styles.uploadIcon} onClick={handleModal}/>
+        <img src={"../chatIcon1.svg"} className={styles.uploadIcon} onClick={handleModal}/>
         <Modal class="modal-dialog modal-" size="xl" show={showModal} onHide={handleModal} className={styles.ModalBox}>
             <Modal.Header className={styles.ModalHeader}>
               <h1 className="text-2xl font-bold lexend tracking-tighter text-center text-4xl font -my-2">

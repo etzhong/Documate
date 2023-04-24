@@ -15,7 +15,6 @@ export function Header(){
                 <strong>DASHBOARD</strong>
             </Link>
         </div>
-        <p className={styles.space}/>
         <hr className={styles.line}/>
         </>
     );

@@ -5,8 +5,9 @@
     align-self: flex-start;
     align-items: center;
     display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    background-color: #F3F4F6;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
 }
 
 .logo {
@@ -28,5 +29,7 @@
 
 .line {
     color: #3987cf;
-    border-width: 2px;
+    border-width: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
