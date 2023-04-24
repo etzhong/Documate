@@ -9,8 +9,15 @@
     padding-top: 3%;
 }
 
-.headerBlock:hover {
-    background: #3987cf
+.headerBlock:hover p{
+    color: #3987cf
+}
+
+.headerBlock:hover img{
+    height: 20px;
+    width: 20px;
+    margin-left: 5%;
+    content: url("../public/vector2.svg");
 }
 
 .container {
@@ -32,5 +39,6 @@
 .vector{
     height: 20px;
     width: 20px;
-    margin-left: 5%
+    margin-left: 5%;
+    content: url("../public/vector1.svg");
 }

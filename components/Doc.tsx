@@ -13,6 +13,8 @@ interface DocProps {
     title: string;
 }
 
+//Other Function Declarations
+
 
 
 export function Doc (props: DocProps) {
@@ -62,7 +64,7 @@ export function Doc (props: DocProps) {
     for(let i=0; i<headers.length; i++){
         listSidebarHeaders.push(
             <a href={"#link-"+i} style={{textDecoration: 'none', scrollBehavior: 'smooth'}}>
-            <SidebarHeader header={headers[i]} />
+                <SidebarHeader header={headers[i]}/>
             </a>
         );
         listContent.push(
