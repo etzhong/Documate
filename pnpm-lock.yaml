@@ -12,7 +12,7 @@ dependencies:
     version: 1.1.1(react-dom@18.2.0)(react@18.2.0)
   bootstrap:
     specifier: ^5.2.3
-    version: 5.2.3(@popperjs/core@2.11.7)
+    version: 5.2.3
   bson:
     specifier: ^5.2.0
     version: 5.2.0
@@ -66,7 +66,7 @@ dependencies:
     version: 7.43.9(react@18.2.0)
   react-image:
     specifier: ^4.1.0
-    version: 4.1.0(@babel/runtime@7.21.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 4.1.0(react-dom@18.2.0)(react@18.2.0)
   react-markdown:
     specifier: ^8.0.5
     version: 8.0.5(@types/react@18.0.28)(react@18.2.0)
@@ -1768,12 +1768,10 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
-  /bootstrap@5.2.3(@popperjs/core@2.11.7):
+  /bootstrap@5.2.3:
     resolution: {integrity: sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ==}
     peerDependencies:
       '@popperjs/core': ^2.11.6
-    dependencies:
-      '@popperjs/core': 2.11.7
     dev: false
 
   /brace-expansion@1.1.11:
@@ -4642,14 +4640,13 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-image@4.1.0(@babel/runtime@7.21.0)(react-dom@18.2.0)(react@18.2.0):
+  /react-image@4.1.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-qwPNlelQe9Zy14K2pGWSwoL+vHsAwmJKS6gkotekDgRpcnRuzXNap00GfibD3eEPYu3WCPlyIUUNzcyHOrLHjw==}
     peerDependencies:
       '@babel/runtime': '>=7'
       react: '>=16.8'
       react-dom: '>=16.8'
     dependencies:
-      '@babel/runtime': 7.21.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
