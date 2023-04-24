@@ -19,7 +19,7 @@
   letter-spacing: -3px;
   align-self: center;
   margin-bottom: 44px;
-  font-size: 5.25rem;
+  font-size: clamp(4rem, 5.25rem, 800%);
   font-weight: 700;
   line-height: 80px;
 }
