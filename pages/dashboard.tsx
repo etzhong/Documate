@@ -4,7 +4,7 @@ import { Button, Modal}  from "react-bootstrap";
 import {Header} from "@/components/Header";
 import {DocBlock} from "@/components/DocBlock";
 import 'bootstrap/dist/css/bootstrap.css';
-import styles from "./dashboard.module.css";
+import styles from "@/styles/dashboard.module.css";
 
 const Dashboard = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -65,14 +65,6 @@ const Dashboard = () => {
     </Modal>
 
     <div className={styles.gridContainer}>
-      <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="Rigol-DG2000"/>
-      <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="Rigol-DG2000"/>
-      <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="Rigol-DG2000"/>
-      <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="Rigol-DG2000"/>
-      <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="Rigol-DG2000"/>
-      <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="Rigol-DG2000"/>
-      <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="Rigol-DG2000"/>
-      <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="Rigol-DG2000"/>
       <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="Rigol-DG2000"/>
     </div>
 
