@@ -60,7 +60,7 @@ def ingest_docs(filename):
     # print(docsearch)
 
 
-ingest_docs('../docs/FPGA.pdf')
+ingest_docs('../docs/Atmega328P2.pdf')
 
 # Namespaces
 # ../docs/Oscilloscope.pdf

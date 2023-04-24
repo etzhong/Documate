@@ -4,12 +4,6 @@ import { ObjectId } from "mongodb";
 
 export const collections: { chunks?: mongoDB.Collection } = {}
 
-/*
-DB_CONN_STRING="mongodb+srv://svott:Mongo1234@cluster0.v1wrvyg.mongodb.net/?retryWrites=true&w=majority"
-DB_NAME="LavaLabDB"
-COLLECTION_NAME="Oscilloscope.pdf"
-*/
-
 export class Chunk {
   constructor(public header: string, public chunk: string, public id?: ObjectId) { }
 };
