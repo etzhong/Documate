@@ -15,9 +15,9 @@ export class Chunk {
 };
 
 
-export async function connectToDatabase() {
+export async function connectToDatabase(document_name: string) {
   const DB_CONN_STRING = 'mongodb+srv://svott:Mongo1234@cluster0.v1wrvyg.mongodb.net/?retryWrites=true&w=majority';
-  const COLLECTION_NAME = 'Atmega328P.pdf';
+  const COLLECTION_NAME = document_name;
   const DB_NAME = 'LavaLabDB';
   // const DB_CONN_STRING = process.env.DB_CONN_STRING;
   // const COLLECTION_NAME = process.env.COLLECTION_NAME;
@@ -37,11 +37,10 @@ export async function connectToDatabase() {
   let chunks = [];
   let headers = [];
   for (let i = 0; i < docs.length; ++i) {
-    let header_with_tag = "<h1><strong>" + docs[i].header + "</strong></h1>";
-    headers.push(header_with_tag);
-    chunks.push("<p>" + docs[i].chunk + "</p>");
+    headers.push(docs[i].header);
+    chunks.push(docs[i].chunk);
   }
-
+  return [headers, chunks];
   console.log(headers[0]);
   console.log(chunks[0]);
   console.log(`Successfully connected to database: ${db.databaseName} and collection: ${myCollection.collectionName}`);
@@ -54,5 +53,6 @@ export async function connectToDatabase() {
   }
   text = text.replaceAll('\n', '<br>')
   console.log("TEXT IS" + text);
-  return '<div class="homepage">' + text + 'This is the homepage data</div>'
+  // return '<div class="homepage">' + text + 'This is the homepage data</div>'
+  // Change the return statement at the end of the function
 }
