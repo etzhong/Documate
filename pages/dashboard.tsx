@@ -65,13 +65,13 @@ const Dashboard = () => {
       </Modal>
 
       <div className={styles.gridContainer}>
-        <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="Rigol-DG2000" documentName="Rigol-DG2000" />
-        <DocBlock name="FPGA" pageID="FPGA" documentName="FPGA" />
-        <DocBlock name="Guitar" pageID="Guitar" />
-        <DocBlock name="McDonalds Ice Cream Machine" pageID="McDonalds" documentName="McDonalds" />
-        <DocBlock name="LG Washing Machine" pageID="Washing" documentName="Washing" />
-        <DocBlock name="Oscilloscope" pageID="Oscilloscope" documentName="Oscilloscope" />
-        <DocBlock name="Atmega328P" pageID="Atmega" documentName="Atmega" />
+        <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="Rigol-DG2000" documentName="Rigol.pdf" />
+        <DocBlock name="FPGA" pageID="FPGA" documentName="FPGA.pdf" />
+        <DocBlock name="Guitar" pageID="Guitar" documentName="Guitar.pdf" />
+        <DocBlock name="McDonalds Ice Cream Machine" pageID="McDonalds" documentName="McDonalds.pdf" />
+        <DocBlock name="LG Washing Machine" pageID="Washing" documentName="WashingManual.pdf" />
+        <DocBlock name="Oscilloscope" pageID="Oscilloscope" documentName="Oscilloscope.pdf" />
+        <DocBlock name="Atmega328P" pageID="Atmega" documentName="Atmega328P2.pdf" />
       </div>
 
     </>

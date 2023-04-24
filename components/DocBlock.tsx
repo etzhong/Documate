@@ -6,6 +6,7 @@ import Image from "next/image";
 interface Props {
     name: string;
     pageID: string;
+    documentName: string; // document
 }
 
 export function DocBlock(props: Props){
@@ -21,3 +22,16 @@ export function DocBlock(props: Props){
         </>
     );
 }
+
+// export function DocBlock(props: Props) {
+//   return (
+//     <>
+//       <a href={"/search/" + "/?document_name=" + props.documentName}>
+//         <Container className={styles.docBlock}>
+//           <img src="atmega.png" className={styles.thumbnail} />
+//           <div className={styles.description}>{props.name}</div>
+//         </Container>
+//       </a>
+//     </>
+//   );
+// }
