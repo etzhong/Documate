@@ -10,8 +10,11 @@ import { Document } from 'langchain/document';
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger,} from '@/components/ui/accordion';
 import {Button, Modal, ModalBody} from "react-bootstrap";
 
+interface ChatProps {
+  documentName: string;
+}
 
-export function Chat() {
+export function Chat(props: ChatProps) {
   const [query, setQuery] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [sourceDocs, setSourceDocs] = useState<Document[]>([]);
@@ -71,7 +74,7 @@ export function Chat() {
     setMessageState((state) => ({ ...state, pending: '' }));
 
     const ctrl = new AbortController();
-
+    let document_name = "../docs/" + props.documentName;
     try {
       fetchEventSource('/api/chat', {
         method: 'POST',
@@ -81,6 +84,7 @@ export function Chat() {
         body: JSON.stringify({
           question,
           history,
+          document_name,
         }),
         signal: ctrl.signal,
         onmessage: (event) => {

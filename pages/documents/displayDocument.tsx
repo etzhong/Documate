@@ -11,7 +11,7 @@ export default function rigolDG2000({ document_name, headers, bodies}: { documen
     return ( 
         <>
         <Header/>
-        <Doc title="Rigol DG2000" documentName={document_name} headers={headers} bodies={bodies} />
+        <Doc title="displayDocument" documentName={document_name} headers={headers} bodies={bodies} />
         <h1>{document_name}</h1>
         
 

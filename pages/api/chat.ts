@@ -15,7 +15,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  const { question, history } = req.body;
+  const { question, history, document_name } = req.body;
 
   if (!question) {
     return res.status(400).json({ message: 'No question in the request' });
@@ -30,7 +30,7 @@ export default async function handler(
     index,
     new OpenAIEmbeddings({}),
     'text',
-    PINECONE_NAME_SPACE, //optional
+    document_name, //optional
   );
 
   // console.log("Before");

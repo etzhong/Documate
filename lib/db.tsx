@@ -40,19 +40,18 @@ export async function connectToDatabase(document_name: string) {
     headers.push(docs[i].header);
     chunks.push(docs[i].chunk);
   }
-  return [headers, chunks];
-  console.log(headers[0]);
-  console.log(chunks[0]);
-  console.log(`Successfully connected to database: ${db.databaseName} and collection: ${myCollection.collectionName}`);
-  var text = "";
-  let count = 0;
-  for (let i = 0; i < chunks.length; ++i) {
-    text += headers[i];
-    text += chunks[i];
-    text += '<br>'
+  let prevHeader = "";
+  let part = 1;
+  for (let i = 0; i < headers.length; ++i) {
+    if (prevHeader == headers[i]) {
+      // insert part
+      part++;
+      headers[i] += " Part " + part.toString();
+    } else {
+      prevHeader = headers[i];
+      part = 1;
+    }
   }
-  text = text.replaceAll('\n', '<br>')
-  console.log("TEXT IS" + text);
-  // return '<div class="homepage">' + text + 'This is the homepage data</div>'
-  // Change the return statement at the end of the function
+
+  return [headers, chunks];
 }
