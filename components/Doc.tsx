@@ -66,25 +66,26 @@ export function Doc(props: DocProps) {
 
     return (
       <div className={styles.searchResults}>
-        {searchResults.map((result, index) => (
-          <div
-            key={index}
-            className={styles.searchResult}
-            onClick={() => handleResultClick()}
-          >
-            <div className={styles.searchResultContent}>
-              
-              <strong>Source {index}</strong>
-              <br></br>
-              {wrapText(result.pageContent, 70).split('\n').map((line, index) => (
-                <div key={index}>{line}</div>
-              ))}
-              <br></br>
-              {"Page Number: " + result.metadata['page_number']}
-              <br></br>
+          <div className={styles.closeIcon} onClick={() => handleResultClick()}>x</div>
+          <br/>
+          {searchResults.map((result, index) => (
+            <div
+              key={index}
+              className={styles.searchResult}
+            >
+              <div className={styles.searchResultContent}>
+                
+                <strong>Source {index}</strong>
+                <br></br>
+                {wrapText(result.pageContent, 70).split('\n').map((line, index) => (
+                  <div key={index}>{line}</div>
+                ))}
+                <br></br>
+                {"Page Number: " + result.metadata['page_number']}
+                <br/> <br/> <br/> <br/>
+              </div>
             </div>
-          </div>
-        ))}
+            ))}
       </div>
     );
   };
@@ -177,8 +178,8 @@ export function Doc(props: DocProps) {
                     placeholder="Search"
                     className={styles.searchBar}
                   />
-                  {renderSearchResults()}
                 </div>
+                {renderSearchResults()}
               </div>
             </form>
             <Link className={styles.dashboardLink} href="/dashboard">
