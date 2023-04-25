@@ -134,8 +134,10 @@
   padding: 8px;
   max-height: 800px;
   overflow-y: auto;
-  width: 200%;
+  /* width: 200%; */
+  padding: 2px;
   z-index: 1000;
+  max-width: 150px;
   box-sizing: border-box;
   /* top: 100%; */
 }
