@@ -75,6 +75,7 @@
     background-color: #F3F4F6;
     padding-top: clamp(5px, 1.5%, 20px);
     padding-bottom: clamp(5px, 1.5%, 20px);
+    border-bottom: solid 2px #E5E7EB;
 }
 
 .logo {
@@ -153,3 +154,4 @@
 .searchResultItem:hover {
   background-color: #f1f1f1;
 }
+
