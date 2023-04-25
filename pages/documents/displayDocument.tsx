@@ -1,16 +1,13 @@
 import * as React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import {Header} from "@/components/Header";
-import {Chat} from "@/components/Chat";
 import {Doc} from "@/components/Doc";
 import { GetServerSidePropsContext } from 'next';
 import { connectToDatabase } from '../../lib/db';
 
 
-export default function rigolDG2000({ document_name, headers, bodies, chatName}: { document_name: string, headers: string[], bodies: string[], chatName: string}) {
+export default function displayDocument({ document_name, headers, bodies, chatName}: { document_name: string, headers: string[], bodies: string[], chatName: string}) {
     return ( 
         <>
-        <Header/>
         <Doc title="displayDocument" documentName={document_name} headers={headers} bodies={bodies} chatName={chatName} />
 
         </>
