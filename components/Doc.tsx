@@ -188,7 +188,6 @@ export function Doc(props: DocProps) {
         </div>
       </div>
 
-
       <div className={styles.container}>
         <div className={styles.sidebar}>
           {listSidebarHeaders}
