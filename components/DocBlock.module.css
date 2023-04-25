@@ -18,21 +18,17 @@
     align-items: flex-start;
     padding: 12px;
     
-    border-radius: 0 0 16px 16px;
+    border-radius: 0 0 12px 12px;
     height: 66.5px;
     width: 294.5px;
     margin-left: -12px;
-    margin-top: -17%;
+    margin-top: -17.25%;
     background: #F9FAFB;
     z-index: 1;
     position: relative;
 
-    font-family: Inter, Arial;
-    font-weight: 400;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
-    line-height: 18px;
-    color: #000000;
-    text-decoration: none;
 }
 
 .thumbnail {
@@ -42,4 +38,10 @@
     width: 130px;
     z-index: 0;
     position: relative;
+}
+
+.anchor {
+    font-family: 'Inter', sans-serif;
+    color: #000000;
+    text-decoration: none;
 }

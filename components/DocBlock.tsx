@@ -2,6 +2,7 @@ import * as React from "react";
 import {Container} from "react-bootstrap";
 import styles from "./DocBlock.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
     name: string;
@@ -14,13 +15,14 @@ interface Props {
 export function DocBlock(props: Props){
     return(
         <>
-        <a href={"/documents/" + props.pageID + "?document_name=" + props.documentName + "&chatName=" + props.chatName}>
+        <Link href={"/documents/" + props.pageID + "?document_name=" + props.documentName + "&chatName=" + props.chatName}
+            className={styles.anchor}>
         <Container className={styles.docBlock}>
             <Image src={props.image} alt="atmega thumbnail image" height='200' width='130' 
                 className={styles.thumbnail}/>
-            <div className={styles.description}>{props.name}</div>
+            <span className={styles.description}>{props.name}</span>
         </Container>
-        </a>
+        </Link>
         </>
     );
 }

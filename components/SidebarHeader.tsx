@@ -12,10 +12,7 @@ export function SidebarHeader(props: HeaderProps) {
     return (
         <>
         <div className={styles.headerBlock}>
-            <div className={styles.container}>
-                <img src={"/vector1.svg"} className={styles.vector}/>
-                <p className={styles.headerText}> {props.header}</p>
-            </div>
+            <p className={styles.headerText}> {props.header}</p>
         </div>
         </>
     );

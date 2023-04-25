@@ -11,27 +11,20 @@
 }
 
 .logo {
-    margin-left: 35%;
-    scale: 1.4;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    margin-left: 15%;
 }
 
 .dashboardLink {
-    font-family: Inter, Arial;
-    font-size: 150%;
-    margin-right: clamp(10px, 2.5%, 30px);
-    margin-bottom: -0.45%;
+    font-size: 20px;
+    line-height: 24px;
+    margin-right: 2.5%;
     color: #000000;
     text-decoration: none;
+    font-family: 'Inter', sans-serif;
 }
 
 .dashboardLink:hover {
     color: #3987cf;
-}
-
-.line {
-    color: #3987cf;
-    border-width: 5px;
-    margin-top: 0;
-    margin-bottom: 0;
-    width: 100%;
 }

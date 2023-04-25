@@ -1,10 +1,33 @@
+.header {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    align-items: center;
+    display: flex;
+    background-color: #F3F4F6;
+    padding-top: clamp(5px, 1.5%, 20px);
+    padding-bottom: clamp(5px, 1.5%, 20px);
+}
+
+.logo {
+    padding-left: 10px;
+    padding-bottom: 5px;
+    margin-left: 15%;
+}
+
+.userIcon {
+    width: 32px;
+    margin-right: 40px;
+}
+
 .space {
     margin-bottom: 60px;
 }
 
 .myDocuments {
     margin-left:6.5%;
-    font-family: Inter, Arial;
+    font-family: 'Inter', sans-serif;
     font-size: 32px;
     font-weight: 600;
 }
@@ -25,20 +48,20 @@
 }
 
 .gridContainer {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 6.5%;
+    margin-right: 8%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 40px;
 }
 
 .uploadPromptBox {
-    font-family: Inter, Arial;
+    font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 .uploadPromptBody {

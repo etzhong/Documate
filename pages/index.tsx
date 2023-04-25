@@ -57,21 +57,21 @@ const App = () => {
         <Typewriter
           onInit={(typewriter) =>{
           typewriter
-            .typeString("Simplify hardware<br /><s style='color: #aaa'>documentation</s> docs.</span>")
+            .typeString("Simplify hardware<br /><s style='color: #aaa'>documentation</s> docs.")
             .start();
           }}
         />
       </span>
       <span className="understanding-and-searching-thro">
         Understanding and searching through hardware docs is hard<br />
-        Let’s automate that process with <b>:Documate</b>.
+        Let’s automate that process with Documate.
       </span>
       
       <Form onSubmit={handleSubmit} className="frame">
         <Form.Group controlId="formBasicEmail">
           <Form.Control className="email-form" 
             type="email"
-            placeholder="Email"
+            placeholder="Your Email Address"
             value={email}
             onChange={handleEmailChange}
           />

@@ -6,6 +6,7 @@
     padding: 1rem;
     margin: auto;
     max-width: 1000px;
+    font-family: 'Inter', sans-serif;
   }
   
   .header {
@@ -32,6 +33,7 @@
     color: #000;
     outline: none;
     max-width: 1000px;
+    font-family: 'Inter', sans-serif;
   }
   
   .textarea:disabled {
@@ -156,12 +158,14 @@
   .markdownanswer a {
     color: #b13a3a;
     font-weight: 500;
+    font-family: 'Inter', sans-serif;
   }
   
   .markdownanswer code {
     color: #15cb19;
     font-weight: 500;
     white-space: pre-wrap !important;
+    font-family: 'Inter', sans-serif;
   }
   
   .markdownanswer ol,
@@ -180,6 +184,7 @@
   .markdownanswer h2,
   .markdownanswer h3 {
     font-size: inherit;
+    font-family: 'Inter', sans-serif;
   }
   
   .center {
@@ -218,11 +223,13 @@
     color: #5f6368;
     font-size: 0.8rem;
     margin: 1.5rem;
+    font-family: 'Inter', sans-serif;
   }
   
   .footer a {
     font-weight: 500;
     color: #7a7d81;
+    font-family: 'Inter', sans-serif;
   }
   
   .footer a:hover {
@@ -252,6 +259,7 @@
     .navlogo {
       font-size: 1.25rem;
       width: 20rem;
+      font-family: 'Inter', sans-serif;
     }
   
     .markdownanswer code {
@@ -262,6 +270,7 @@
       font-size: 0.7rem;
       width: 100%;
       text-align: center;
+      font-family: 'Inter', sans-serif;
     }
   }
 
@@ -277,9 +286,9 @@
 }   
 
 .ModalHeader {
-  font-family: Inter, Arial;
   justify-content: center;
-  margin-bottom: -1%
+  margin-bottom: -1%;
+  font-family: 'Inter', sans-serif;
 }
 
 .uploadIcon {

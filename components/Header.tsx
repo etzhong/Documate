@@ -1,6 +1,5 @@
 import * as React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import styles from "./Header.module.css";
 
 export function Header(){
@@ -12,10 +11,9 @@ export function Header(){
                 <img src="../logo.svg" alt=":Documate Logo" className={styles.logo}/>
             </Link>
             <Link className={styles.dashboardLink} href="/dashboard">
-                <strong>DASHBOARD</strong>
+                <strong>DEMO</strong>
             </Link>
         </div>
-        <hr className={styles.line}/>
         </>
     );
 }

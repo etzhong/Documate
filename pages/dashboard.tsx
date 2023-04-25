@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState, useRef, LegacyRef } from "react";
 import { Button, Modal } from "react-bootstrap";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { DocBlock } from "@/components/DocBlock";
 import 'bootstrap/dist/css/bootstrap.css';
@@ -43,7 +44,16 @@ const Dashboard = () => {
 
   return (
     <>
-      <Header />
+      <div className={styles.header}>
+          <Link href="/" >
+              <img src="../logo.svg" alt=":Documate Logo" className={styles.logo}/>
+          </Link>
+          <Link className={styles.dashboardLink} href="/dashboard">
+              <img src="../userIcon.svg" className={styles.userIcon}/>
+          </Link>
+      </div>
+
+
       <p className={styles.space} />
       <div className={styles.div1}>
         <h1 className={styles.myDocuments}>My Documents</h1>

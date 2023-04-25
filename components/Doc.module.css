@@ -1,16 +1,14 @@
 .sidebar {
     background: #F3F4F6;
     margin-right: 2%;
-    width: 20%;
     min-height: 800px;
-    min-width: 100px;
-    max-width: 500px;
+    width: clamp(100px, 20%, 400px);
     height: 100%;
     float: left;
     overflow: scroll;
     position: absolute;
     scroll-behavior: smooth;
-    font-family: Inter, Arial;
+    font-family: 'Inter', sans-serif;
     padding-top: 1%;
     padding-bottom: 15%;
 }
@@ -24,9 +22,9 @@
     padding-left: 0%;
     overflow: scroll;
     position: absolute;
-    margin-left: 24%;
+    margin-left: clamp(150px, 24%, 450px);
     scroll-behavior: smooth;
-    font-family: Inter, Arial;
+    font-family: 'Inter', sans-serif;
     padding-top: 1%;
     padding-bottom: 15%;
 }

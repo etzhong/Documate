@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { GetServerSideProps } from 'next';
+import Link from "next/link";
 import {connectToDatabase} from '@/lib/db';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Header} from "@/components/Header";
@@ -32,11 +33,11 @@ export function Doc (props: DocProps) {
     const listContent = [];
     for(let i=0; i<headers.length; i++){
         listSidebarHeaders.push(
-            <a href={"#link-"+i} style={{textDecoration: 'none', scrollBehavior: 'smooth'}} 
+            <Link href={"#link-"+i} style={{textDecoration: 'none', scrollBehavior: 'smooth'}} 
               onClick={() => handleHeaderClick(i)}
             >
                 <SidebarHeader header={headers[i]}/>
-            </a>
+            </Link>
         );
         if (i == 0) {
           listContent.push(

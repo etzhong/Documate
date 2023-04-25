@@ -1,7 +1,7 @@
 import '@/styles/base.css';
 import '@/styles/landing.css';
 import type { AppProps } from 'next/app';
-import { Inter } from 'next/font/google';
+import {Lexend, Inter } from 'next/font/google';
 
 const inter = Inter({
   variable: '--font-inter',
