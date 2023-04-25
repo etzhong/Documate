@@ -9,6 +9,12 @@ export class Chunk {
   constructor(public header: string, public chunk: string, public id?: ObjectId) { }
 };
 
+function extractImgTags(htmlString: string) {
+  const imgTagRegex = /<img id="myImage" [^>]*>/gi;
+  const imgTags = htmlString.match(imgTagRegex);
+  return imgTags || [];
+}
+
 function removeImgTags(htmlString: string) {
   if (htmlString == "") {
     return "";
@@ -37,7 +43,12 @@ export async function connectToDatabase(document_name: string) {
   let headers = [];
   for (let i = 0; i < docs.length; ++i) {
     headers.push(docs[i].header);
-    chunks.push(removeImgTags(docs[i].chunk));
+    const extractedTags = extractImgTags(docs[i].chunk);
+    let text = removeImgTags(docs[i].chunk);
+    for (let j = 0; j < extractedTags.length; ++j) {
+      text += extractedTags[j];
+    }
+    chunks.push(text);
   }
   let prevHeader = "";
   let part = 1;

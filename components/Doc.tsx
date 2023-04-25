@@ -9,7 +9,6 @@ import {SidebarHeader} from "@/components/SidebarHeader"
 import styles from "./Doc.module.css";
 import { useState } from "react";
 
-
 //Props
 interface DocProps {
     title: string;
