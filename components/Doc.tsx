@@ -8,6 +8,7 @@ import { Chat } from "@/components/Chat";
 import { SidebarHeader } from "@/components/SidebarHeader"
 import styles from "./Doc.module.css";
 import { useState, FormEvent } from "react";
+import { Inter } from 'next/font/google';
 
 //Props
 interface DocProps {
@@ -18,7 +19,8 @@ interface DocProps {
   chatName: string;
 }
 
-
+//Inter Font
+const inter = Inter({ subsets: ["latin"] });
 
 export function Doc(props: DocProps) {
   let headers = props.headers;
@@ -157,28 +159,32 @@ export function Doc(props: DocProps) {
 
   return (
     <>
-      <div className={styles.header}>
-        <Link href="/" >
-          <img src="../logo.svg" alt=":Documate Logo" className={styles.logo} />
-        </Link>
-        <div className={styles.rightHeaderDiv}>
-          <form onSubmit={handleSearch}>
-            <div className={styles.searchBarContainer}>
-              <input type="image" src="../searchIcon.svg" className={styles.searchIcon} />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyDown={handleKeyDown}
-                placeholder="Search"
-                className={styles.searchBar}
-              />
-              {renderSearchResults()}
-            </div>
-          </form>
-          <Link className={styles.dashboardLink} href="/dashboard">
-            <img src="../userIcon.svg" className={styles.userIcon} />
+      <div className={inter.className} >
+        <div className={styles.header}>
+          <Link href="/" >
+            <img src="../logo.svg" alt=":Documate Logo" className={styles.logo} />
           </Link>
+          <div className={styles.rightHeaderDiv}>
+            <form onSubmit={handleSearch}>
+              <div className={styles.searchContainer}>
+                <div className={styles.searchBarContainer}>
+                  <input type="image" src="../searchIcon.svg" className={styles.searchIcon} />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    placeholder="Search"
+                    className={styles.searchBar}
+                  />
+                  {renderSearchResults()}
+                </div>
+              </div>
+            </form>
+            <Link className={styles.dashboardLink} href="/dashboard">
+              <img src="../userIcon.svg" className={styles.userIcon} />
+            </Link>
+          </div>
         </div>
       </div>
 
