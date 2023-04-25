@@ -16,7 +16,6 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   const { question, history, document_name } = req.body;
-
   if (!question) {
     return res.status(400).json({ message: 'No question in the request' });
   }

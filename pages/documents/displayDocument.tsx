@@ -7,11 +7,11 @@ import { GetServerSidePropsContext } from 'next';
 import { connectToDatabase } from '../../lib/db';
 
 
-export default function rigolDG2000({ document_name, headers, bodies}: { document_name: string, headers: string[], bodies: string[] }) {
+export default function rigolDG2000({ document_name, headers, bodies, chatName}: { document_name: string, headers: string[], bodies: string[], chatName: string}) {
     return ( 
         <>
         <Header/>
-        <Doc title="displayDocument" documentName={document_name} headers={headers} bodies={bodies} />
+        <Doc title="displayDocument" documentName={document_name} headers={headers} bodies={bodies} chatName={chatName} />
 
         </>
 
@@ -21,6 +21,7 @@ export default function rigolDG2000({ document_name, headers, bodies}: { documen
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   // Retrieve the id query parameter from the context
   const document_name = context.query.document_name as string;
+  const chatName = context.query.chatName as string;
 
   const res = await connectToDatabase(document_name);
   // Fetch data from your database using the `db` object.
@@ -32,7 +33,8 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     props: {
       headers,
       bodies,
-      document_name
+      document_name,
+      chatName
     },
   };
 }

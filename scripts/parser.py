@@ -315,10 +315,10 @@ def parse_documention(document):
     result = headers_para(doc, size_tag, font_counts)
     headers = find_subheading(font_counts, size_tag)
     
-    print(headers)
-    print('---------------------------')
-    print(result)
-    return
+    # print(headers)
+    # print('---------------------------')
+    # print(result)
+    # return
     
     tag_index = []
     

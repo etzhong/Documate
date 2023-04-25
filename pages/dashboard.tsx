@@ -65,13 +65,13 @@ const Dashboard = () => {
       </Modal>
 
       <div className={styles.gridContainer}>
-        <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="displayDocument" documentName="Rigol2.pdf" image="/Rigol.png" />
-        <DocBlock name="FPGA" pageID="displayDocument" documentName="FPGA2.pdf" image="/FPGA.png" />
-        <DocBlock name="Guitar" pageID="displayDocument" documentName="Guitar2.pdf" image="/Guitar.png" />
-        <DocBlock name="McDonalds Ice Cream Machine" pageID="displayDocument" documentName="McDonalds2.pdf" image="/McDonalds.png" />
-        <DocBlock name="LG Washing Machine" pageID="displayDocument" documentName="WashingManual2.pdf" image="/WashingManual.png" />
-        <DocBlock name="Oscilloscope" pageID="displayDocument" documentName="Oscilloscope2.pdf" image="/Oscilloscope.png" />
-        <DocBlock name="Atmega328P" pageID="displayDocument" documentName="Atmega328P.pdf" image="/atmega.png" />
+        <DocBlock name="Rigol DG2000 Arbitrary Waveform Generator" pageID="displayDocument" documentName="Rigol2.pdf" image="/Rigol.png" chatName="Rigol.pdf" />
+        <DocBlock name="FPGA" pageID="displayDocument" documentName="FPGA2.pdf" image="/FPGA.png" chatName="FPGA.pdf" />
+        <DocBlock name="Guitar" pageID="displayDocument" documentName="Guitar2.pdf" image="/Guitar.png" chatName="Guitar.pdf" />
+        <DocBlock name="McDonalds Ice Cream Machine" pageID="displayDocument" documentName="McDonalds2.pdf" image="/McDonalds.png" chatName="McDonalds.pdf" />
+        <DocBlock name="LG Washing Machine" pageID="displayDocument" documentName="WashingManual2.pdf" image="/WashingManual.png" chatName="WashingManual.pdf" />
+        <DocBlock name="Oscilloscope" pageID="displayDocument" documentName="Oscilloscope2.pdf" image="/Oscilloscope.png" chatName="Oscilloscope.pdf" />
+        <DocBlock name="Atmega328P" pageID="displayDocument" documentName="Atmega328P.pdf" image="/atmega.png" chatName="Atmega328P2.pdf" />
       </div>
 
     </>

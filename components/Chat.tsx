@@ -12,6 +12,7 @@ import {Button, Modal, ModalBody} from "react-bootstrap";
 
 interface ChatProps {
   documentName: string;
+  chatName: string;
 }
 
 export function Chat(props: ChatProps) {
@@ -74,7 +75,8 @@ export function Chat(props: ChatProps) {
     setMessageState((state) => ({ ...state, pending: '' }));
 
     const ctrl = new AbortController();
-    let document_name = "../docs/" + props.documentName;
+    let document_name = "../docs/" + props.chatName;
+    console.log("NAME: " + document_name);
     try {
       fetchEventSource('/api/chat', {
         method: 'POST',

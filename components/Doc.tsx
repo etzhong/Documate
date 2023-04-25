@@ -14,6 +14,7 @@ interface DocProps {
     documentName: string;
     headers: string[];
     bodies: string[];
+    chatName: string;
 }
 
 //Other Function Declarations
@@ -56,7 +57,7 @@ export function Doc (props: DocProps) {
             </div>
         </div>
         <div className={styles.chat}>
-          <Chat documentName={props.documentName} />
+          <Chat documentName={props.documentName} chatName={props.chatName} />
         </div>
         </>
     );
