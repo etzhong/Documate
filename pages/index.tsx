@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Alert, Button, Form } from "react-bootstrap";
 import Typewriter from 'typewriter-effect';
 import {Header} from "@/components/Header";
+import { insertEmail } from "../lib/db";
+
 
 const App = () => {
   const [email, setEmail] = useState("");
@@ -12,17 +14,34 @@ const App = () => {
     setEmail(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Email validation regex pattern
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (emailPattern.test(email)) {
       // Success
-      setShowAlert(true);
-      setEmail("");
-      setTimeout(() => {
-        setShowAlert(false);
-      }, 5000); // hide the alert after 5 seconds
+      try {
+      const response = await fetch("/api/submit-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+        if (response.ok) {
+          setShowAlert(true);
+          setEmail("");
+          setTimeout(() => {
+            setShowAlert(false);
+          }, 5000); // hide the alert after 5 seconds
+        } else {
+          throw new Error("An error occurred. Please try again later.");
+        }
+      } catch (error) {
+        console.error("Error submitting email:", error);
+        alert("An error occurred. Please try again later.");
+      }
     } else {
       // Invalid email
       alert("Please enter a valid email address");
