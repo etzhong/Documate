@@ -227,7 +227,7 @@ export default function Search() {
                                   </AccordionTrigger>
                                   <AccordionContent>
                                     <ReactMarkdown linkTarget="_blank">
-                                      {doc.pageContent + "Page Number: " + doc.metadata['page_number']}
+                                      {doc.pageContent + " Page Number: " + doc.metadata['page_number']}
                                     </ReactMarkdown>
                                     <p className="mt-2">
                                       <b>Source:</b> {doc.metadata.source}

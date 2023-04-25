@@ -40,7 +40,7 @@ export async function connectToDatabase(document_name: string) {
     if (prevHeader == headers[i]) {
       // insert part
       part++;
-      headers[i] += " Part " + part.toString();
+      headers[i] += " " + part.toString();
     } else {
       prevHeader = headers[i];
       part = 1;

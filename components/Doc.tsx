@@ -36,7 +36,11 @@ export function Doc (props: DocProps) {
         listContent.push(
             <>
             <h1 id={"link-"+i} className={styles.header}>{headers[i]}</h1>
-            <p id={"link-"+i} className={styles.body}>{bodies[i]}</p>
+            <p
+              id={"link-" + i}
+              className={styles.body}
+              dangerouslySetInnerHTML={{ __html: bodies[i] }}
+            ></p>
             </>
         );
     }

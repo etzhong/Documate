@@ -17,9 +17,10 @@ def remove_tags(chunk):
 
 def insert_into_db(acceptable_templates, outputs, doc_name, myHeader):
   db = get_database()
+  new_name = doc_name[8:-4] + '2'
   # Insert collections
-  print("Doc Name: ", doc_name[8:])
-  collection_name = db[doc_name[8:]]
+  print("Doc Name: ", new_name)
+  collection_name = db[new_name]
   print("size of acceptable_templates: ", len(acceptable_templates))
   print("size of outputs: ", len(outputs))
   # len of outputs should be 1
@@ -213,7 +214,7 @@ def grab_chunks(text_bodies, header, result, tag_index, myHeaders):
         # concat
         chunk_string = ' '.join(map(str, chunk))
         # TODO parse out chunks of size less than 50words * 4 chars = 200 chars ?
-        if (len(chunk_string) > 200):
+        if (len(chunk_string) > 300):
             text_bodies.append(chunk_string)
             # Add header
             myHeaders.append(result[elem])
@@ -229,8 +230,10 @@ def grab_chunks(text_bodies, header, result, tag_index, myHeaders):
 
 def send_prompts(acceptable_templates, headers_used, outputs, myHeaders, doc_name):
     db = get_database()
-    collection_name = db[doc_name[8:]]
+    name = doc_name[8:-4] + '2.pdf'
+    collection_name = db[name]
     st = time.time()
+    print("Collection name: " + name)
 
     for index, elem in enumerate(acceptable_templates):
         print("On header", headers_used[index])
@@ -250,7 +253,7 @@ def send_prompts(acceptable_templates, headers_used, outputs, myHeaders, doc_nam
                     # Catching exceptions (timeout, remote disconnection, bad gateway)
                     while (inference_not_done):
                         try:
-                            prompt = "I will give you a page of hardware documentation from an electric engineering manual. I want you to make some new documentation inspired by software documentation's simple and relatively easy to read layout."
+                            prompt = "I will give you a page of hardware documentation from an electric engineering manual. I want you to make some new documentation inspired by software documentation's simple and relatively easy to read layout. Please format your output to use html header tags and <p> tags where appropriate (don't give me a full html document output, just use tags)"
                             prompt += "\n" + chunk[k:min(len(chunk), k + (4097-1080))]
                             completion = openai.ChatCompletion.create(
                                 model="gpt-3.5-turbo",
@@ -277,7 +280,7 @@ def send_prompts(acceptable_templates, headers_used, outputs, myHeaders, doc_nam
                 # Catching exceptions (timeout, remote disconnection, bad gateway)
                 while (inference_not_done):
                     try:
-                        prompt = "I will give you a page of hardware documentation from an electric engineering manual. I want you to make some new documentation inspired by software documentation's simple and relatively easy to read layout."
+                        prompt = "I will give you a page of hardware documentation from an electric engineering manual. I want you to make some new documentation inspired by software documentation's simple and relatively easy to read layout. Please format your output to use html header tags and <p> tags where appropriate (don't give me a full html document output, just use tags)"
                         prompt += "\n" + chunk
                         completion = openai.ChatCompletion.create(
                             model="gpt-3.5-turbo",
@@ -311,7 +314,12 @@ def parse_documention(document):
     size_tag = font_tags(font_counts, styles)
     result = headers_para(doc, size_tag, font_counts)
     headers = find_subheading(font_counts, size_tag)
+    
     print(headers)
+    print('---------------------------')
+    print(result)
+    return
+    
     tag_index = []
     
     for index, chunk in enumerate(result):
@@ -332,7 +340,7 @@ def parse_documention(document):
         # accept headers if 10% of pages <= count <= 2 * pages
         # FIX: only accepting specific headers
         # count >= int(page_count/10) and count <= 1.5 * page_count range
-        if (header == "<|||h3>"):
+        if (header == "<|||h2>"):
             text_bodies = []
             # grab chunks of text for page_count
             grab_chunks(text_bodies, header, result, tag_index, myHeaders)
@@ -349,7 +357,7 @@ def parse_documention(document):
     # insert_into_db(acceptable_templates, outputs, document, myHeaders)
 
 
-parse_documention('../docs/Rigol.pdf')
+parse_documention('../docs/WashingManual.pdf')
 
 
 # TODO store header page numbers?

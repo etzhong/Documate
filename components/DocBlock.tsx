@@ -7,6 +7,7 @@ interface Props {
     name: string;
     pageID: string;
     documentName: string; // document
+    image: string;
 }
 
 export function DocBlock(props: Props){
@@ -14,7 +15,7 @@ export function DocBlock(props: Props){
         <>
         <a href={"/documents/" + props.pageID + "?document_name=" + props.documentName}>
         <Container className={styles.docBlock}>
-            <Image src="/atmega.png" alt="atmega thumbnail image" height='200' width='130' 
+            <Image src={props.image} alt="atmega thumbnail image" height='200' width='130' 
                 className={styles.thumbnail}/>
             <div className={styles.description}>{props.name}</div>
         </Container>
