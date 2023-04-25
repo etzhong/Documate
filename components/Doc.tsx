@@ -36,9 +36,9 @@ export function Doc(props: DocProps) {
   };
 
   function wrapText(text: string, maxLineLength: number) {
-    text = text.replace('\n', '');
-    console.log("Text:" + text);
-    const words = text.split(' ');
+    let newText = text.replace(/(\r\n|\n|\r)/gm, " ")
+    console.log("Text:" + newText);
+    const words = newText.split(' ');
     const lines = [];
     let currentLine = '';
 
@@ -74,7 +74,7 @@ export function Doc(props: DocProps) {
               
               <strong>Source {index}</strong>
               <br></br>
-              {wrapText(result.pageContent, 150).split('\n').map((line, index) => (
+              {wrapText(result.pageContent, 70).split('\n').map((line, index) => (
                 <div key={index}>{line}</div>
               ))}
               <br></br>
