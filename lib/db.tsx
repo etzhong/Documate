@@ -8,15 +8,18 @@ export class Chunk {
   constructor(public header: string, public chunk: string, public id?: ObjectId) { }
 };
 
+function removeImgTags(htmlString: string) {
+  if (htmlString == "") {
+    return "";
+  }
+  const imgTagRegex = /<img[^>]*>/gi;
+  return htmlString.replace(imgTagRegex, '');
+}
 
 export async function connectToDatabase(document_name: string) {
   const DB_CONN_STRING = 'mongodb+srv://svott:Mongo1234@cluster0.v1wrvyg.mongodb.net/?retryWrites=true&w=majority';
   const COLLECTION_NAME = document_name;
   const DB_NAME = 'LavaLabDB';
-  // const DB_CONN_STRING = process.env.DB_CONN_STRING;
-  // const COLLECTION_NAME = process.env.COLLECTION_NAME;
-  // const DB_NAME = process.env.DB_NAME;
-  // dotenv.config();
 
   const client: mongoDB.MongoClient = new mongoDB.MongoClient(DB_CONN_STRING!);
 
@@ -32,7 +35,7 @@ export async function connectToDatabase(document_name: string) {
   let headers = [];
   for (let i = 0; i < docs.length; ++i) {
     headers.push(docs[i].header);
-    chunks.push(docs[i].chunk);
+    chunks.push(removeImgTags(docs[i].chunk));
   }
   let prevHeader = "";
   let part = 1;
